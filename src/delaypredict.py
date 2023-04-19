@@ -6,7 +6,6 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import count
 from pyspark.sql.functions import count, when, isnull, col
 from pyspark.sql.functions import col, sum
-from pyspark.sql.functions import col, percentile_approx
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import corr
 from pyspark.sql.functions import corr, unix_timestamp
