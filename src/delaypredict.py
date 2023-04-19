@@ -159,7 +159,7 @@ predictions = lr_model.transform(test_data)
 # Select columns to display from the predictions
 predictions.select("timedifference", "prediction").show()
 
-pr_data=df.select('vehicleid','currentlocation','towards','timetolive','destinationName','timestamp')
+pr_data=df.select('vehicleid','currentlocation','towards','destinationName','timestamp')
 
 # Join the two dataframes on the vehicleid column
 pr_data_with_predictions = pr_data.join(predictions.select('vehicleid', 'prediction'),
