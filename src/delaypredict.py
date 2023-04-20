@@ -166,5 +166,7 @@ pr_data_with_predictions = pr_data.join(predictions.select('vehicleid', 'predict
                                         on='vehicleid',
                                         how='left_outer')
 
+pr_data_with_predictions = pr_data_with_predictions.withColumnRenamed("prediction", "delay")
+
 # Save the dataframe as a table in Hive
 pr_data_with_predictions.write.mode('overwrite').saveAsTable('tfl.dailydelayprediction')
